@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Desastre — Librería + Café en la Del Valle (CDMX)</title>
+  <meta name="description" content="Libros de editoriales independientes, café, jardín y eventos. San Francisco 233. Martes de cine 20:00.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:32px;height:32px;border-radius:10px;background:#1f1b16;color:#fff;display:grid;place-items:center">✦</div>
+        <strong>El Desastre</strong>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost" id="btn-bill">🧾 Facturar</button>
+        <button class="btn btn-primary" id="btn-wa-header">💬 WhatsApp</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="badge" style="background:#1f1b16;color:#fff;border-color:#1f1b16">Librería + Café</span>
+            <h1 id="hero-title">Libros, café y un jardín para bajar el ritmo.</h1>
+            <p id="hero-sub" class="muted">Librería de editoriales independientes + barra de café. Martes de cine 20:00.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 10px">
+              <button class="btn btn-primary" id="btn-wa-hero">💬 Escribir por WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-maps-hero">📍 Cómo llegar</button>
+            </div>
+            <div class="muted" style="display:flex;gap:12px;flex-wrap:wrap;font-size:.95rem">
+              <div>🗓 <span id="hours"></span></div>
+              <div>📍 <span id="address"></span></div>
+            </div>
+          </div>
+          <div class="hero-img" id="hero-img">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.25),transparent)"></div>
+            <div style="position:absolute;left:12px;bottom:12px;font-size:12px;background:rgba(255,255,255,.85);backdrop-filter:blur(4px);padding:6px 10px;border-radius:999px">🎬 Martes de cine · 20:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS MARQUEE -->
+    <div class="marquee">
+      <div class="container">
+        <div class="track" id="press-track"></div>
+      </div>
+    </div>
+
+    <!-- BOOKS -->
+    <section>
+      <div class="container">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <h2>Hoy en estantes</h2>
+            <p class="muted">Catálogo curado de editoriales independientes.</p>
+            <div class="chip-row" id="editor-chips"></div>
+          </div>
+          <button class="btn btn-ghost" id="btn-catalog">Ver catálogo completo →</button>
+        </div>
+        <div class="grid cols-4" id="book-grid"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section>
+      <div class="container">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <h2>Dicen de nosotros</h2>
+            <p class="muted">Reseñas destacadas de Google Maps.</p>
+          </div>
+          <button class="btn btn-ghost" id="btn-more-reviews">Ver más reseñas →</button>
+        </div>
+        <div class="grid cols-3" id="reviews-grid"></div>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section style="background:#fff">
+      <div class="container">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <h2>No te pierdas nada</h2>
+            <p class="muted">Síguenos en Instagram</p>
+          </div>
+          <button class="btn btn-ghost" id="btn-ig">Abrir Instagram</button>
+        </div>
+        <div class="grid cols-3" id="ig-grid"></div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section>
+      <div class="container">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <h2>Agenda</h2>
+            <p class="muted">Martes de cine 20:00 + próximos eventos.</p>
+          </div>
+          <button class="btn btn-ghost" id="btn-gcal">➕ Agregar a Google Calendar</button>
+        </div>
+        <div class="grid cols-3" id="agenda-grid"></div>
+      </div>
+    </section>
+
+    <!-- SPACES -->
+    <section>
+      <div class="container">
+        <div class="grid cols-3" style="grid-template-columns:1fr 1fr;gap:18px">
+          <div>
+            <h2>Café & espacios</h2>
+            <ul class="muted" style="padding-left:16px;line-height:1.9">
+              <li>Wi‑Fi y enchufes para trabajar a gusto</li>
+              <li>Barra de café de especialidad + pan</li>
+              <li>Jardín y terraza para leer con calma</li>
+            </ul>
+          </div>
+          <div class="grid" id="spaces-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP & HOURS -->
+    <section style="background:#fff">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
+          <div>
+            <h2>Visítanos</h2>
+            <p class="muted" id="visit-address"></p>
+            <p class="muted" id="visit-hours"></p>
+            <p class="muted">Correo: <a id="visit-email" href="#"></a></p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+              <button class="btn btn-primary" id="btn-wa-footer">💬 Escribir por WhatsApp</button>
+              <button class="btn btn-ghost" id="btn-maps-footer">📍 Cómo llegar</button>
+              <button class="btn btn-outline" id="btn-bill-visit">🧾 Facturar ticket</button>
+            </div>
+          </div>
+          <div class="map">
+            <img id="map-img" alt="Mapa El Desastre" style="width:100%;height:100%;object-fit:cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>© <span id="year"></span> El Desastre — Café + Libros. Demo LVDUC × Sintétiko.</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a id="link-ig" class="muted" target="_blank">Instagram</a>
+        <span class="muted">•</span>
+        <a class="muted" href="https://eldesastre.com.mx/" target="_blank">Sitio actual</a>
+        <span class="muted">•</span>
+        <a id="link-bill" class="muted" target="_blank">Facturar</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-bar">
+    <div class="container row">
+      <button class="btn btn-primary" id="btn-wa-sticky">💬 Escribir por WhatsApp</button>
+      <button class="btn btn-ghost" id="btn-bill-sticky">🧾 Facturar</button>
+    </div>
+  </div>
+
+  <div class="hud" id="hud"></div>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
